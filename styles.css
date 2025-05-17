@@ -1,0 +1,282 @@
+/* Import Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Root variables */
+:root {
+  --bg-color: #0d1117;
+  --accent-color: #3ea6ff;
+  --text-color: #c9d1d9;
+  --glass-bg: rgba(255, 255, 255, 0.07);
+  --glass-shadow: rgba(0, 0, 0, 0.7);
+  --font-family: 'Poppins', sans-serif;
+  --transition-speed: 0.3s;
+}
+
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background: #0d1117;
+  color: var(--text-color);
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+  line-height: 1.6;
+}
+
+/* Starry background + moving starfield animation */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(2px 2px at 20% 15%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 50% 30%, #bbb, transparent),
+    radial-gradient(1.7px 1.7px at 70% 80%, #ddd, transparent),
+    radial-gradient(2px 2px at 85% 20%, #eee, transparent),
+    radial-gradient(1.3px 1.3px at 10% 75%, #ccc, transparent);
+  background-repeat: repeat;
+  background-size: 200% 200%;
+  animation: starfield 80s linear infinite;
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* Additional twinkling stars */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(1.2px 1.2px at 40% 10%, #fff, transparent),
+    radial-gradient(0.8px 0.8px at 60% 50%, #aaa, transparent),
+    radial-gradient(1.1px 1.1px at 80% 70%, #ddd, transparent);
+  background-repeat: repeat;
+  background-size: 300% 300%;
+  animation: starfield 120s linear reverse infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes starfield {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+/* Container for consistent width */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* Header styles */
+header {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px var(--glass-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 15px 0;
+  border-radius: 0 0 15px 15px;
+}
+
+.logo {
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  user-select: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-speed);
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: var(--accent-color);
+  background-color: rgba(62, 166, 255, 0.1);
+  box-shadow: 0 0 8px var(--accent-color);
+}
+
+/* Hamburger for small screens */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  background: var(--text-color);
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: block;
+}
+
+.hamburger::before,
+.hamburger::after {
+  position: absolute;
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  top: 8px;
+}
+
+/* Main content */
+main {
+  margin: 40px 0 80px 0;
+}
+
+/* Glassmorphism card/section style */
+section.container {
+  background: var(--glass-bg);
+  border-radius: 20px;
+  padding: 30px 40px;
+  box-shadow: 0 8px 32px var(--glass-shadow);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: box-shadow 0.3s ease;
+}
+
+section.container:hover {
+  box-shadow: 0 12px 48px var(--accent-color);
+}
+
+h2 {
+  color: var(--accent-color);
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 2.4rem;
+  letter-spacing: 1.2px;
+}
+
+p, ul, li {
+  font-weight: 300;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  line-height: 1.8;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 12px;
+}
+
+/* Links inside content */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+a:hover {
+  color: #64b5ff;
+  text-decoration: underline;
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 -8px 32px var(--glass-shadow);
+  border-radius: 15px 15px 0 0;
+  color: var(--text-color);
+  font-weight: 300;
+  font-size: 0.9rem;
+  user-select: none;
+  bottom: 0;
+}
+
+/* Responsive for smaller devices */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: var(--glass-bg);
+    position: absolute;
+    top: 65px;
+    right: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px var(--glass-shadow);
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .nav-toggle {
+    display: flex;
+  }
+}
+
+/* Smooth fade-in animations */
+section.container {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeInUp 0.8s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Icon style tweaks */
+i {
+  vertical-align: middle;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+i:hover {
+  color: #64b5ff;
+}

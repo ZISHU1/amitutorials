@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amit Tutorials - Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-pVZ6e7Fk4lhz3XQX5BtyY9zDQeBO8kB2YSlYnEIGtX3p0pp9LWpk2wT5rVx4F0WXRdIY9vQg3dyxhE0yN0+qEA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex; align-items:center; justify-content: space-between;">
+      <h1 class="logo">Amit Tutorials</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="toppers.html">Toppers</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span class="hamburger"></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container">
+      <h2>Welcome to Amit Tutorials</h2>
+      <p>Your journey to academic excellence begins here. Join our classes to learn from the best.</p>
+    </section>
+
+    <section class="container">
+      <h2>Why Choose Us?</h2>
+      <ul>
+        <li>Experienced instructors dedicated to your success</li>
+        <li>Interactive and engaging lessons</li>
+        <li>Flexible timings and affordable pricing</li>
+        <li>Comprehensive study materials and support</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Amit Tutorials. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
