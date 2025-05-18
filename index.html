@@ -2,66 +2,215 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Amit Tutorials - Home</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-pVZ6e7Fk4lhz3XQX5BtyY9zDQeBO8kB2YSlYnEIGtX3p0pp9LWpk2wT5rVx4F0WXRdIY9vQg3dyxhE0yN0+qEA=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amit Tutorials</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background: #0e0e0e;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    canvas#starfield {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -100;
+    }
+    header {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    header h1 {
+      color: #00aaff;
+      font-size: 1.8rem;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #00aaff;
+    }
+    section {
+      padding: 2rem;
+    }
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+    }
+    .card h3 {
+      color: #00aaff;
+      margin-bottom: 0.5rem;
+    }
+    .contact-info {
+      text-align: center;
+      line-height: 1.8;
+    }
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
 <body>
+  <canvas id="starfield"></canvas>
+
   <header>
-    <div class="container" style="display:flex; align-items:center; justify-content: space-between;">
-      <h1 class="logo">Amit Tutorials</h1>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="toppers.html">Toppers</a></li>
-          <li><a href="courses.html">Courses</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <button class="nav-toggle" aria-label="Toggle navigation">
-          <span class="hamburger"></span>
-        </button>
-      </nav>
-    </div>
+    <h1>Amit Tutorials</h1>
+    <nav>
+      <a href="#index">Home</a>
+      <a href="#toppers">Toppers</a>
+      <a href="#courses">Courses</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <main>
-    <section class="container">
-      <h2>Welcome to Amit Tutorials</h2>
-      <p>Your journey to academic excellence begins here. Join our classes to learn from the best.</p>
-    </section>
+  <section id="index">
+    <h2>Welcome to Amit Tutorials</h2>
+    <p>Your trusted coaching center for academic excellence!</p>
+  </section>
 
-    <section class="container">
-      <h2>Why Choose Us?</h2>
-      <ul>
-        <li>Experienced instructors dedicated to your success</li>
-        <li>Interactive and engaging lessons</li>
-        <li>Flexible timings and affordable pricing</li>
-        <li>Comprehensive study materials and support</li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Amit Tutorials. All rights reserved.</p>
+  <section id="toppers">
+    <h2>Our Toppers</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>Aarav Sharma</h3>
+        <p>Percentage: 96.5%</p>
+        <p>Course: Class 10 (SSC)</p>
+      </div>
+      <div class="card">
+        <h3>Meera Iyer</h3>
+        <p>Percentage: 95.2%</p>
+        <p>Course: Class 12 (Science)</p>
+      </div>
+      <div class="card">
+        <h3>Yash Patil</h3>
+        <p>Percentage: 94.7%</p>
+        <p>Course: JEE Batch</p>
+      </div>
     </div>
-  </footer>
+  </section>
+
+  <section id="courses">
+    <h2>Our Courses</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>Class 9 - 10 (SSC)</h3>
+        <p>Subjects: Maths, Science, English</p>
+      </div>
+      <div class="card">
+        <h3>Class 11 - 12 (Science)</h3>
+        <p>Subjects: Physics, Chemistry, Biology, Maths</p>
+      </div>
+      <div class="card">
+        <h3>NEET / JEE Preparation</h3>
+        <p>Subjects: Full syllabus + Test Series</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+      <p>Email: amittutorials@gmail.com</p>
+      <p>Phone: +91-9876543210</p>
+      <p>WhatsApp: +91-9876543210</p>
+    </div>
+  </section>
 
   <script>
-    // Mobile nav toggle
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
+    const canvas = document.getElementById('starfield');
+    const ctx = canvas.getContext('2d');
+    let stars = [];
+    const STAR_COUNT = 150;
 
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    function random(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    class Star {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = random(0, canvas.width);
+        this.y = random(0, canvas.height);
+        this.size = random(0.5, 1.5);
+        this.speed = random(0.1, 0.5);
+      }
+      update() {
+        this.y -= this.speed;
+        if (this.y < 0) this.reset();
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = 'white';
+        ctx.shadowColor = 'white';
+        ctx.shadowBlur = 8;
+        ctx.fill();
+      }
+    }
+
+    for(let i = 0; i < STAR_COUNT; i++) {
+      stars.push(new Star());
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      stars.forEach(star => {
+        star.update();
+        star.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
   </script>
 </body>
 </html>
